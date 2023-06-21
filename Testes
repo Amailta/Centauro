@@ -1,0 +1,37 @@
+package testes;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Testes {
+
+	WebDriver driver;
+
+	@Before
+	public void setUp() throws Exception {
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		driver.get("https://https://www.centauro.com.br");
+		driver.manage().window().maximize();
+
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		driver.findElement(By.xpath("//a[@class ='_15faty3']")).click();
+
+	}
+
+}
